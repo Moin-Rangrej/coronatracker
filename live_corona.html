@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Data Fetch from Live Corona API</title>
+</head>
+<body>
+    <div class="search-container">
+        <button id="search-btn">Refresh</button>
+      </div>
+      <div class="chartBox">
+        <canvas id="myChart" height="700" width="700"></canvas>
+          <select  onchange="changeChart(this.value)">
+            <option value="">Select any Graph</option>
+            <option value="Bar">Bar</option>
+            <option value="Bubble">Bubble</option>
+            <option value="doughnut">doughnut</option>
+            <option value="pie">pie</option>
+            <option value="line">line</option>
+            <option value="radar">radar </option>
+          </select>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="live_corona.js"></script>
+</body>
+</html>
