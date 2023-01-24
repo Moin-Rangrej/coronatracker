@@ -19,7 +19,7 @@ function validationForm() {
         alert("Last Name is required")
         return false
     }
-    if (email == "") {
+    if (!email.includes("@")) {
         alert("Email is required")
         return false
     }
