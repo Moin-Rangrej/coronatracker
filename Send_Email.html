@@ -39,10 +39,10 @@
     .nav-link:hover{
       color: blue;
     }
-    .img{
-        height: 100px;
-        width: 100px;
-    }
+    /* .img .myimg{
+        height: 280px;
+        width: inherit;
+    } */
   </style>
    <script type="text/javascript"
    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
@@ -91,9 +91,10 @@
       </div>
     </div>
   </nav>
-
+  <br><br>
   <div class="container">
-     <img src="contact.jpg" alt="Contact US">
+     <img src="contact.jpg" alt="Contact US" class="myimg" style="width: inherit; height: 280px;">
+     <br><br><br>
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Enter Name:</label>
         <input type="text" class="form-control" id="Name" placeholder="John Deo">
@@ -106,7 +107,7 @@
         <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
         <textarea class="form-control" id="message" rows="3"></textarea>
       </div>
-      <button type="button" class="btn btn-primary" onclick="sendMail()">Submit</button>
+      <button type="button" class="btn btn-primary"  onclick="sendMail()">Submit</button>
   </div>
   <br><br><br>
   <!-- Footer -->
