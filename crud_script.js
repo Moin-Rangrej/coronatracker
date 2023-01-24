@@ -87,7 +87,7 @@ function addData(e) {
         } else {
             peopleList = JSON.parse(localStorage.getItem("peopleList"))
         }
-
+        
         peopleList.push({
             fname,
             lname,

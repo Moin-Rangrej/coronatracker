@@ -18,7 +18,7 @@
     <br><br><br>
     <div class="container">
 
-        <form>
+        <form class="formSubmit">
             <div class="form-group">
                 <label for="exampleInputEmail1">Enter FirstName</label>
                 <input type="text" class="form-control" id="fname" placeholder="Enter FirstName">
@@ -53,29 +53,40 @@
 
     <script>
 
+        const formSubmit = document.querySelector('.formSubmit');
 
-
+        formSubmit.addEventListener('submit', submitData)
         function submitData() {
-            AllData = []
             var fname = document.getElementById('fname').value
             var lname = document.getElementById('lname').value
             var email = document.getElementById('myemail').value
             var password = document.getElementById('pass').value
-            var
+
+            var Output = new Array()
+            var Output = JSON.parse(localStorage.getItem("myData")) ? JSON.parse(localStorage.getItem("myData")) : []
             
-            AllData = {
-                fname,
-                lname,
-                email,
-                password
+            var final = Output.some((v) => {
+                return v.email == email
+            })
+
+            if (final) {
+                alert("Duplicate Found")
+            } else {
+                Output.push({
+                        fname,
+                        lname,
+                        email,
+                        password,
+                    })
+
+                    localStorage.setItem("myData", JSON.stringify(Output))
             }
 
-            localStorage.setItem("myData", JSON.stringify(AllData))
 
-            document.getElementById('fname').value = ''
-            document.getElementById('lname').value = ''
-            document.getElementById('myemail').value = ''
-            document.getElementById('pass').value = ''
+            // document.getElementById('fname').value = ''
+            // document.getElementById('lname').value = ''
+            // document.getElementById('myemail').value = ''
+            // document.getElementById('pass').value = ''
         }
 
 
