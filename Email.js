@@ -1,4 +1,5 @@
 function sendMail() {
+
     var  tempParams={
         from_name : document.getElementById('Name').value,
         to_name : document.getElementById('toname').value,
@@ -10,4 +11,7 @@ function sendMail() {
         console.log('Success', res.status);
     })
 
+    document.getElementById('Name').value = ''
+    document.getElementById('toname').value = ''
+    document.getElementById('message').value = ''
 }
